@@ -39,7 +39,11 @@ const Navbar = () => {
             text: "Cart",
             icon: <ShoppingCartRoundedIcon /> 
         }
-    ]
+    ];
+
+    const handleBookings = () => {
+        
+    }
 
     return <nav>
         <div className="nav-logo-container">
@@ -55,7 +59,7 @@ const Navbar = () => {
                 <AddShoppingCartIcon />
             </IconButton>
 
-            <button className="primary-button">Bookings Now</button>
+            <button className="primary-button" onClick={handleBookings}>Bookings Now</button>
         </div>
 
         <div className="navbar-menu-container">

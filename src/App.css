@@ -306,6 +306,11 @@ nav {
   align-items: center;
   font-weight: 600;
 }
+.notfound-image-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
 @media (max-width: 1000px) {
   .navbar-links-container a {
