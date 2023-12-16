@@ -13,11 +13,17 @@ import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import { ListItem, ListItemButton, ListItemIcon } from "@mui/material";
 import ListItemText from "@mui/material/ListItemText";
-
+import { useRecoilValue } from "recoil";
+import { userNameSelector } from "../Atoms/AllSelectors";
+import { WindowOutlined } from "@mui/icons-material";
+import { useNavigate } from 'react-router-dom';
 
 
 const Navbar = () => {
     const [openMenu, setOpenMenu] = useState(false);
+    const userName = useRecoilValue(userNameSelector);
+    const navigate = useNavigate();
+
     const menuOptions = [
         {
             text: "Home",
@@ -42,7 +48,8 @@ const Navbar = () => {
     ];
 
     const handleBookings = () => {
-        
+        console.log("Clicked on button");
+        navigate('/signup');
     }
 
     return <nav>
@@ -58,6 +65,7 @@ const Navbar = () => {
             <IconButton href="" color="black" aria-label="add to shopping cart">
                 <AddShoppingCartIcon />
             </IconButton>
+            {userName}
 
             <button className="primary-button" onClick={handleBookings}>Bookings Now</button>
         </div>
